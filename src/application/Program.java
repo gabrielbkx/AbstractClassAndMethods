@@ -18,8 +18,8 @@ public class Program {
         int n = sc.nextInt();
         sc.nextLine();
 
-        for (int i = 0; i < n; i++){
-            System.out.println("Shape #" + (i + 1) + " data: ");
+        for (int i = 1 ; i <= n ; i++){
+            System.out.println("Shape #" +  1 + " data: ");
             System.out.println();
             System.out.print("Rectangle or Circle (r/c)? ");
             char r = sc.next().toLowerCase().charAt(0);
@@ -31,20 +31,18 @@ public class Program {
                 double width = sc.nextDouble();
                 System.out.print("Height: ");
                 double height = sc.nextDouble();
-                Shape form = new Rectangle(color,width,height);
-                list.add(form);
+                list.add(new Rectangle(color,width,height));
             }else {
                 System.out.print("Radius: ");
                 double radius = sc.nextDouble();
-                Shape form = new Circle(color,radius);
-                list.add(form);
+                list.add(new Circle(color,radius));
             }
         }
 
         System.out.println("SHAPE AREAS: ");
         System.out.println();
-        for (int i = 0 ; i < n; i ++){
-            System.out.println(String.format("%.2f",list.get(i).area()));
+        for (Shape shape: list){
+            System.out.println(String.format("%.2f",shape.area()));
         }
         sc.close();
     }

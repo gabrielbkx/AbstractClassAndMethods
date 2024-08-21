@@ -6,9 +6,6 @@ public class Circle extends Shape{
 
     private Double radius;
 
-    private static final double PI = 3.14159;
-
-
     public Circle() {
         super();
     }
@@ -18,8 +15,16 @@ public class Circle extends Shape{
         this.radius = radius;
     }
 
+    public Double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(Double radius) {
+        this.radius = radius;
+    }
+
     @Override
     public double area(){
-        return PI * radius * radius;
+        return Math.PI * radius * radius;
     }
 }
